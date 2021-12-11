@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { supabase } from '../../client'
 import Loading from '../Utils/Loading'
 import { Menu, Transition } from '@headlessui/react'
-import { ChevronDownIcon, HomeIcon, ArchiveIcon, CogIcon, LogoutIcon } from '@heroicons/react/solid'
+import { ChevronDownIcon, HomeIcon, ArchiveIcon, CogIcon, LogoutIcon, PlusIcon } from '@heroicons/react/solid'
 import { NavLink } from 'react-router-dom'
 const AccountNav = () =>
 {
@@ -69,8 +69,9 @@ const AccountNav = () =>
 							Dashboard
 						</NavLink>
 					</Menu.Item>
+					<hr className='border-slate-800' />
 					<Menu.Item as="li" className="w-full">
-						<NavLink to="/posts" className={({ isActive }) =>
+						<NavLink to="/posts/allPosts" className={({ isActive }) =>
 							`inline-flex items-center w-full p-2 rounded transition ease-linear ${ isActive
 								? "bg-slate-600"
 								: 
@@ -78,13 +79,25 @@ const AccountNav = () =>
 							}`
 						}>
 							<ArchiveIcon className='w-5 h-5 fill-current mr-2' />
-							Posts
+							My Posts
+						</NavLink>
+					</Menu.Item>
+					<Menu.Item as="li" className="w-full">
+						<NavLink to="/posts/addPosts" className={({ isActive }) =>
+							`inline-flex items-center w-full p-2 rounded transition ease-linear ${ isActive
+								? "bg-slate-600"
+								:
+								"hover:bg-slate-600 "
+							}`
+						}>
+							<PlusIcon className='w-5 h-5 fill-current mr-2' />
+							Add Post
 						</NavLink>
 					</Menu.Item>
 
 					<hr className='border-slate-800'/>
 					<Menu.Item as="li" className="w-full">
-						<NavLink to="/posts" className={({ isActive }) =>
+						<NavLink to="/account" className={({ isActive }) =>
 							`inline-flex items-center w-full p-2 rounded transition ease-linear ${ isActive
 								? "bg-slate-600"
 								:

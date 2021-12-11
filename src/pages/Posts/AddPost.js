@@ -80,6 +80,7 @@ const AddPost = () =>
 
 	return (
 		<div className='container mx-auto'>
+			<h1 className='text-white'>Please be nice :)</h1>
 			{isLoading && <Loading />}
 		 <ToastContainer
 				position="top-right"
@@ -92,19 +93,19 @@ const AddPost = () =>
 				draggable
 				pauseOnHover
 			/>
-			<div className='w-full mx-auto h-auto  rounded space-y-4 p-4 bg-slate-900'>
-				<label className='text-white'>What are you up to today?</label>
-				<input type="text" placeholder="Write about something interesting!" className='rounded-md px-2 border-0 w-full shadow bg-gray-800 focus:ring-slate-400 text-gray-50 tracking-wider text-sm' maxLength={150} value={title} onChange={(e) =>
+			<div className='w-full mx-auto h-auto  rounded space-y-4 p-4 '>
+				<label className='text-gray-200 font-serif font-medium'>What are you up to today?</label>
+				<input type="text" placeholder="Write about something interesting!" className='rounded-md px-2 border-0 w-full shadow bg-slate-900 focus:ring-slate-400 text-gray-50 tracking-wider text-sm' maxLength={150} value={title} onChange={(e) =>
 				{
 					setTitle(e.target.value)
 				}}>
 				</input>
-				<textarea type="text" placeholder="What's on your mind?" className='rounded-md px-2 border-0 w-full shadow bg-gray-800 focus:ring-slate-400 text-gray-50 tracking-wider text-sm' rows={10} value={content} onChange={(e) =>
+				<textarea type="text" placeholder="What's on your mind?" className='rounded-md px-2 border-0 w-full shadow bg-slate-900 focus:ring-slate-400 text-gray-50 tracking-wider text-sm' rows={10} value={content} onChange={(e) =>
 				{
 					setContent(e.target.value)
 				}}>
 				</textarea>
-				<input type="text" placeholder="Category (e.g. Technology)" className='rounded-md px-2 border-0 w-full shadow bg-gray-800 focus:ring-slate-400 text-gray-50 tracking-wider text-sm' maxLength={150} onKeyDown={(e) =>
+				<input type="text" placeholder="Category (e.g. Technology)" className='rounded-md px-2 border-0 w-full shadow bg-slate-900 focus:ring-slate-400 text-gray-50 tracking-wider text-sm' maxLength={150} onKeyDown={(e) =>
 				{
 					if (e.key === 'Enter') 
 					{
