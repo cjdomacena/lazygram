@@ -6,9 +6,8 @@ import Loading from '../Utils/Loading'
 import Auth from './Auth'
 const Nav = () =>
 {
-	const { setSession, session, user } = useContext(SessionContext);
+	const {  session, user, setSession } = useContext(SessionContext);
 	const [isLoading, setIsLoading] = useState(false);
-
 
 	useEffect(() =>
 	{
@@ -17,12 +16,13 @@ const Nav = () =>
 		{
 			setSession(session)
 		})
-	}, [session])
 
+	}, [session])
+	
 
 
 	return (
-		<header className='w-full h-auto p-2 bg-slate-900'>
+		<header className='w-full h-auto p-2 bg-slate-900 shadow'>
 			<nav className='xl:container lg:container mx-auto w-full text-slate-50 flex justify-between items-center h-14'>
 				{isLoading ? <Loading /> : 
 				<div className='flex space-x-2 items-center'>
@@ -32,7 +32,6 @@ const Nav = () =>
 			
 				}
 				{user ? "" : <Auth />}
-				
 			</nav>
 		</header>
 	)

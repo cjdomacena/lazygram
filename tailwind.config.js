@@ -17,11 +17,19 @@ module.exports = {
           800: "#1E293B",
           900: "#0F172A"
         }
+      },
+      fontFamily: {
+        heading: ['Playfair Display', 'serif'],
+        serif: ['Playfair Display', 'serif'],
+        sans: ['Raleway', 'sans-serif']
       }
     },
   },
   variants: {
     extend: {},
   },
-  plugins: [],
+  plugins: [  
+    require('@tailwindcss/forms'), 
+    require('@tailwindcss/line-clamp'), 
+  ],
 }

@@ -40,8 +40,7 @@ const AccountNav = () =>
 	useEffect(() =>
 	{
 		getProfile();
-		count += 1
-		console.log(count)
+
 	}, [])
 
 	return (
